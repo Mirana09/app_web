@@ -8,6 +8,8 @@ function mainController($scope,$http,$window){
 	
 	$http.get('/getAllGroup/' + p)
 		.success(function(data){
+			sessionStorage.setItem("pseudo",null);
+			sessionStorage.setItem("groupe",null);
 			$scope.groupe = data;
 			console.log(data);
 		})

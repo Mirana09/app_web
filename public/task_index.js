@@ -6,8 +6,7 @@ function mainController($scope,$http,$window){
 	var groupe = sessionStorage.getItem("groupe");
 	$scope.formData = {};
 	$scope.form = {};
-	sessionStorage.setItem("pseudo",null);
-	sessionStorage.setItem("groupe",null);
+
 
 	/*$http.get('/getTaskSet/' + p)
 		.success(function(data){
@@ -31,20 +30,12 @@ function mainController($scope,$http,$window){
 
 	$http.get('/getTaskGrouped/' + p + "/" + groupe)
 		.success(function(data){
+			sessionStorage.setItem("pseudo",null);
+			sessionStorage.setItem("groupe",null);
 			$scope.laliste = data ;
 			console.log(data);
 		})
 		
-		.error(function(data){
-			console.log('Error: ' + data);
-		});
-
-	$http.get('/getAllGroup/' + p)
-		.success(function(data){
-			$scope.groupe = data;
-			console.log(data);
-		})
-
 		.error(function(data){
 			console.log('Error: ' + data);
 		});
