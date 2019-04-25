@@ -409,6 +409,9 @@
         "memory-pager": "^1.0.2"
       }
     },
+    "scripts": {
+      "start": "node app.js"
+    },
     "statuses": {
       "version": "1.4.0",
       "resolved": "https://registry.npmjs.org/statuses/-/statuses-1.4.0.tgz",
