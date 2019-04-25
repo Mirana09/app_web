@@ -1,29 +1,3 @@
-
-
-//var MongoClient = require('mongodb').MongoClient;
-
-//var uri="mongodb+srv://mirana:mirana@cluster0-qp2kf.mongodb.net/Poly?retryWrites=true"
-
-//var client = new MongoClient(uri, {useNewUrlParser: true});
-
-// Initialize connection
-
-//client.connect(function(err) {
-//    if(err) throw err;
-
-//    var dataSet = client.db("Poly").collection("Tasks").find({});
-
-//    dataSet.forEach(function(task){
-//        console.log(task.name + " | " + task.done);
-//    });
-//});
-
-
-//datalayer.init --> app.js
-// addTask puis datalayer.insertTask(task,function(){
-//    res.send({success : true});
-//}); --> app.js
-
 //datalayer
 var datalayer = require('./datalayer.js');
 
@@ -40,8 +14,8 @@ app.use(express.static(__dirname + '/public'));
 
 datalayer.init(function(){
     console.log('init');
-    app.listen(3000);
-    console.log("Listening on port 3000");
+    app.listen(5000);
+    console.log("Listening on port 5000");
 });
 
 app.get('/', function(req,res){
