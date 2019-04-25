@@ -2,8 +2,8 @@ var ListeaFaire = angular.module('ListeaFaire', []);
 
 function mainController($scope,$http,$window){
 
-	var p = sessionStorage.getItem("pseudo");
-	var groupe = sessionStorage.getItem("groupe");
+	var p;
+	var groupe;
 	$scope.formData = {};
 	$scope.form = {};
 
@@ -30,8 +30,6 @@ function mainController($scope,$http,$window){
 
 	$http.get('/getTaskGrouped/' + p + "/" + groupe)
 		.success(function(data){
-			sessionStorage.setItem("pseudo",null);
-			sessionStorage.setItem("groupe",null);
 			$scope.laliste = data ;
 			console.log(data);
 		})
@@ -99,6 +97,13 @@ function mainController($scope,$http,$window){
 		var u = "http://" + $window.location.host + "/groups";
 		$window.location.href = u;
 	};
+
+	$scope.load = function () {
+		p = sessionStorage.getItem("pseudo");
+		groupe = sessionStorage.getItem("groupe");
+	};
+	
+	$scope.load();
 };
 
 function showTextBox(id) {
