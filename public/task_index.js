@@ -2,8 +2,8 @@ var ListeaFaire = angular.module('ListeaFaire', []);
 
 function mainController($scope,$http,$window){
 
-	var p;
-	var groupe;
+	var p = sessionStorage.getItem("pseudo");
+	var groupe = sessionStorage.getItem("groupe");
 	$scope.formData = {};
 	$scope.form = {};
 
@@ -99,11 +99,8 @@ function mainController($scope,$http,$window){
 	};
 
 	$scope.load = function () {
-		p = sessionStorage.getItem("pseudo");
-		groupe = sessionStorage.getItem("groupe");
-	};
-	
-	$scope.load();
+        $scope.counter = localStorage.getItem("counter");
+    };
 };
 
 function showTextBox(id) {

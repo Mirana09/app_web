@@ -2,8 +2,8 @@ var ListeaFaire = angular.module('ListeaFaire', []);
 
 function mainController($scope,$http,$window){
 
-	var p;
-	var groupe;
+	var p = sessionStorage.getItem("pseudo");
+	var groupe = sessionStorage.getItem("groupe");
 	$scope.form = {};
 	
 	$http.get('/getAllGroup/' + p)
@@ -61,13 +61,6 @@ function mainController($scope,$http,$window){
 				console.log('Error: ' + data);
 			});
 	};
-
-	$scope.load = function () {
-		p = sessionStorage.getItem("pseudo");
-		groupe = sessionStorage.getItem("groupe");
-	};
-	
-	$scope.load();
 
 };
 
