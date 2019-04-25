@@ -6,6 +6,8 @@ function mainController($scope,$http,$window){
 	var groupe = sessionStorage.getItem("groupe");
 	$scope.formData = {};
 	$scope.form = {};
+	sessionStorage.setItem("pseudo",null);
+	sessionStorage.setItem("groupe",null);
 
 	/*$http.get('/getTaskSet/' + p)
 		.success(function(data){
