@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="ListeaFaire">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liste Choses à Faire</title>
+
+	<script src ="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="group_index.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
+
+
+</head>
+
+<body ng-controller="mainController">
+	<h1 class="row justify-content-center"> Liste des choses à faire </h1>
+	<button class="btn btn-dark" ng-click="logout()"> Déconnexion </button>
+
+	<br/> <div class="row justify-content-center"> Nombre de groupes : {{ groupe.length }}  </div> <br/> <br/>
+	
+	<div class="row">
+        
+		<div class="col-md-1"> </div>
+		<div id="todo-list" class="col-md-8">
+			<div ng-repeat="y in groupe" class="row">
+				<button ng-click="deleteGroup(y._id,y.name)" class="btn btn-danger"> X </button>
+				<button ng-click="setGroup(y._id)"> > </button>
+				<h5 id="taskgroup"> {{ y.name }} </h5>
+			</div>
+		</div>
+
+		<div id="todo-form" class="col-md-2">
+			<div> <button type="submit" onclick="showTextBox('champ')"> Ajouter un groupe </button> </div>
+			<br/>
+			<br/>
+			<div id="champ" style="visibility:hidden">
+				<input type="text" placeholder="Nom" ng-model="form.name">
+				<button type="submit" ng-click="createGroup()" onclick="hideTextBox('champ')"> OK </button>
+				<br/>
+				<button type="submit" onclick="hideTextBox('champ')"> Annuler </button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

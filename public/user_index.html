@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="ListeaFaire">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liste Choses à Faire</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+	<script src ="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="user_index.js"></script>
+</head>
+
+<body ng-controller="mainController">
+	<div class="row">
+	<div id="todo-form" class="col-md-1"> </div>
+
+	<div id="todo-form" class="col-md-4 login-form-1">
+		<h3>Connexion</h3>
+		<form>
+			<input type="text" class="form-control" placeholder="Pseudo" ng-model="form.pseudo">
+			<br/>
+			<input type="password" class="form-control" placeholder="Mdp" ng-model="form.mdp">
+			<br/>
+			<button type="submit" class="btnSubmit" ng-click="login()"> Se connecter </button>
+		</form>
+	</div>
+	
+	<div id="todo-form" class="col-md-2"> </div>
+
+	<div id="todo-form" class="col-md-4 login-form-2">
+		<h3>Inscription</h3>
+		<form>
+			<input type="text" class="form-control" placeholder="Pseudo" ng-model="formData.pseudo">
+			<br/>
+			<input type="password" class="form-control" placeholder="Mdp" ng-model="formData.mdp">
+			<br/>
+			<button type="submit" class="btnSubmit" ng-click="register()"> S'inscrire </button>
+		</form>
+	</div>
+
+	<div id="todo-form" class="col-md-1"> </div>
+</div>
+</body>
+</html>
